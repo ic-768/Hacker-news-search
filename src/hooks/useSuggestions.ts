@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getStories } from "@/api/get-stories";
 import { debounce } from "lodash";
+
+import { getStories } from "@/api/get-stories";
 
 export const useSuggestions = () => {
   const [isOpen, setIsOpen] = useState(false);
