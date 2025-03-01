@@ -20,3 +20,5 @@ This project is a React application that allows users to search for stories from
 # Other notes
 
 - Vite, Tailwind and ShadCN were used to bootstrap the app.
+- Given the 2 hour requirement, I unfortunately did not have enough time to write integration / unit tests.
+- All functionality implementation was completed within the allotted time, with the exception of a minor refactor: the replacement of a useEffect with a computedValue. The commit has been marked with `Next day` for transparency.

@@ -5,7 +5,6 @@ import { debounce } from "lodash";
 import { getStories } from "@/api/get-stories";
 
 export const useSuggestions = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
 
@@ -25,9 +24,14 @@ export const useSuggestions = () => {
   });
 
   // if no query or no stories, close the dropdown
-  useEffect(() => {
-    setIsOpen(debouncedQuery.length > 2 && !!stories.length);
-  }, [debouncedQuery, stories.length]);
+  const isOpen = debouncedQuery.length > 2 && !!stories.length;
 
-  return { debouncedQuery, isOpen, query, setQuery, isFetching, stories };
+  return {
+    debouncedQuery,
+    isOpen,
+    query,
+    setQuery,
+    isFetching,
+    stories,
+  };
 };
